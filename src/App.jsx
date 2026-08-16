@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
+import { createHashRouter, RouterProvider } from 'react-router-dom' 
 import Navbar from './Navbar'
 import './App.css'
 import Layout from './Layout/Layout'
@@ -9,11 +9,11 @@ import Noutfount from './Noutfount'
 
 
 function App() {
-  const router = createBrowserRouter ([
+  const router = createHashRouter ([
     {path:'/' , element: <Layout/> , children:[
       {path:"" , element:<Cart/>},
       {path:"home" , element:<Cart/>},
-      {path:"/detail/:id" , element:<DetailCart/>},
+      {path:"detail/:id" , element:<DetailCart/>},
       {path:"*" , element:<Noutfount/>}
     ]}
   ])
